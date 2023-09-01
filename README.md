@@ -1,6 +1,3 @@
-
-Certainly! Here is a modified version of the README file for your Weather Alert project:
-
 Weather Alert
 This project is a simple Weather Alert application that notifies the user about the current weather conditions of a specified location.
 
@@ -8,7 +5,7 @@ Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 Prerequisites
-You will need to have Python installed on your machine. You can download it from here.
+You will need to have Python installed on your machine. You can download it from the Python website.
 
 Installing
 Clone the repository to your local machine.
@@ -44,3 +41,4 @@ License
 This project is free to use and can be modified by anyone.
 
 Working Demo
+https://weatheralert-8ff7e2960673.herokuapp.com/
