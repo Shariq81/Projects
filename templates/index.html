@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Forecast</title>
+</head>
+<body>
+    <h1>Weather Forecast</h1>
+    <form method="POST">
+        <label for="city">Enter a city</label>
+        <input type="text" id="city" name="city">
+        <button type="submit">Search</button>
+    </form>
+    {% if weather %}
+    <h2>Current weather in {{ weather['name'] }}</h2>
+    <p>Temperature: {{ weather['main']['temp'] }}°C</p>
+    <p>Humidity: {{ weather['main']['humidity'] }}%</p>
+    <p>Wind speed: {{ weather['wind']['speed'] }} m/s</p>
+    <p>Weather: {{ weather['weather'][0]['description'] }}</p>
+    {% endif %}
+    {% if forecast %}
+    <h2>Weather forecast for the next 7 days in {{ forecast['city']['name'] }}</h2>
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Temperature</th>
+            <th>Humidity</th>
+            <th>Weather</th>
+        </tr>
+        {% for day in forecast['list'] %}
+        <tr>
+            <td>{{ day['dt_txt'] }}</td>
+            <td>{{ day['main']['temp'] }}°C</td>
+            <td>{{ day['main']['humidity'] }}%</td>
+            <td>{{ day['weather'][0]['description'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    {% if alerts %}
+    <h2>Alerts</h2>
+    <ul>
+        {% for alert in alerts %}
+        <li><b><font color="red">{{ alert }}</font></b></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>
